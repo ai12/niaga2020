@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>PJBS MANAJEMEN RISIKO</title>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="http://localhost/ketonggo_project/pjbs_erm2019/assets/img/favicon.ico" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Titillium+Web:200,300,400,600,700" rel="stylesheet">  -->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/css/icon.css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Wait Me Css -->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/waitme/waitMe.css" rel="stylesheet" />
+
+    <!-- Bootstrap Select Css -->
+    <!--<link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />-->
+
+    <!-- Morris Chart Css-->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Style Css -->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/css/themes/all-themes.css" rel="stylesheet" />
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/css/jquery.treetable.theme.default.css" rel="stylesheet">
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/css/jquery.treetable.css" rel="stylesheet">
+
+    <!-- Style Css -->
+    <link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/resources/css/custom.css" rel="stylesheet">
+
+    <!-- Jquery Core Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/jquery/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        function site_url(url){
+            return "http://localhost/ketonggo_project/pjbs_erm2019/"+url;
+        }
+        function current_url(){
+            return "http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home";
+        }
+    </script>
+
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/autoNumeric.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- Data table -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/jquery.treetable.js"></script>
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/jquery.dataTables.min.js"></script>
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/dataTables.fixedColumns.min.js"></script>
+</head>
+
+<body class="theme-indigo ">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <!-- #END# Page Loader -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User Administrator</div>
+                    <div class="email">Administrator</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right dropdown-small">
+                            <li><a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/profile"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="seperator" class="divider"></li>
+
+                                                        <li><a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/loginas"><i class="material-icons">input</i>Login As</a></li>
+                            
+                            <li><a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/login/logout"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+
+              
+ <ul class="list"> <li class="header">MAIN NAVIGATION</li> 
+ <li class="active">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home'><i class='material-icons'>dashboard</i> <span>Dashboard</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/risk_visi_misi'><i class='material-icons'>domain</i> <span>Visi & Misi</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/risk_sasaran_strategis'><i class='material-icons'>view_list</i> <span>Sasaran Strategis</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/risk_scorecard'><i class='material-icons'>playlist_add</i> <span>Kajian Risiko</span>&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-left tunjuk"></span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/risk_status_risk'><i class='material-icons'>info</i> <span>Status Risiko</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_taksonomi_task'><i class='material-icons'>flag</i> <span>Taksonomi Baru</span><span class="label label-success">0</span></a>
+</li>
+<li class="">
+<a href='#' class='menu-toggle'>
+<i class='material-icons'>print</i> <span>Laporan</span>
+</a>
+
+ <ul class="ml-menu"> 
+ <li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/laporan_kertas_kerja'><i class='material-icons'></i> <span>Kertas Kerja</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/laporan_risk_profile'><i class='material-icons'></i> <span>Matriks Risiko</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/laporan_makalah'><i class='material-icons'></i> <span>Dokumen</span></a>
+</li>
+</ul></li>
+<li class="">
+<a href='#' class='menu-toggle'>
+<i class='material-icons'>view_comfy</i> <span>Master</span>
+</a>
+
+ <ul class="ml-menu"> 
+ <li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_risk_dampak'><i class='material-icons'></i> <span>Tingkat Dampak</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_risk_kemungkinan'><i class='material-icons'></i> <span>Tingkat Kemungkinan</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_risk_kajian_risiko'><i class='material-icons'></i> <span>Jenis Kajian Risiko</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_risk_kriteria_dampak'><i class='material-icons'></i> <span>Kriteria Dampak (impact rating)</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_risk_tingkat'><i class='material-icons'></i> <span>Penanganan Risiko</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_risk_matrix'><i class='material-icons'></i> <span>Matriks Risiko</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_risk_efektifitas'><i class='material-icons'></i> <span>Efektifitas Kontrol</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_status_progress'><i class='material-icons'></i> <span>Status Progress</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_interval'><i class='material-icons'></i> <span>Interval</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_maturity'><i class='material-icons'></i> <span>Maturity Level</span></a>
+</li>
+<li class="">
+<a href='#' class='menu-toggle'>
+<i class='material-icons'></i> <span>Proses Bisnis</span>
+</a>
+
+ <ul class="ml-menu"> 
+ <li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_pb_kategori'><i class='material-icons'></i> <span>Kategori</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_pb_kelompok_proses'><i class='material-icons'></i> <span>Kelompok</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_pb_nama_proses'><i class='material-icons'></i> <span>Nama Proses</span></a>
+</li>
+</ul></li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/mt_taksonomi_objective'><i class='material-icons'></i> <span>Taksonomi</span></a>
+</li>
+</ul></li>
+<li class="">
+<a href='#' class='menu-toggle'>
+<i class='material-icons'>settings</i> <span>Pengaturan</span>
+</a>
+
+ <ul class="ml-menu"> 
+ <li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/public_sys_log'><i class='material-icons'></i> <span>Log</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/public_sys_setting'><i class='material-icons'></i> <span>Konfigurasi</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/akses_jabatan'><i class='material-icons'></i> <span>Akses Jabatan</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/risk_sort'><i class='material-icons'></i> <span>Urutan Top Risiko</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/public_sys_user'><i class='material-icons'></i> <span>User</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/risk_msg'><i class='material-icons'></i> <span>Pengumuman</span></a>
+</li>
+<li class="">
+<a href='http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/risk_strategi_map'><i class='material-icons'></i> <span>Strategi Map</span></a>
+</li>
+</ul></li>
+</ul>            </div>
+            <!-- #Menu -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+    </section>
+
+    <section class="content">
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+                <a style="float: left;margin-left: 35px;" href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/strategis">
+                 <img src="http://localhost/ketonggo_project/pjbs_erm2019/assets/img/logo-pjb-service-shear2.png" alt="PJB Services" style="height: 50px;">
+                 </a>
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+
+                <a class="navbar-brand" href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/strategis">
+                APLIKASI MANAJEMEN RISIKO
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                                        <li style=" margin-top: 13px; margin-left: 5px; font-size: 12px">
+                        <button style="padding: 3px 10px;font-size: inherit;" class="btn btn-primary btn-sm" onclick="arsip()" type="button"><i class="material-icons" style="font-size: inherit; font-size: 14px;">folder</i> ANNUAL REPORT</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </li>
+                    <li style=" margin-top: 13px; margin-left: 5px; font-size: 12px">
+                        <button style="padding: 3px 10px;font-size: inherit;" class="btn btn-primary btn-sm" onclick="maturylevel()" type="button"><i class="material-icons" style="font-size: inherit; font-size: 14px;">apps</i> MATURITY LEVEL</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </li>
+                    <li style=" margin-top: 13px; margin-left: 5px; font-size: 12px">
+                        <span style="color: #fff; font-weight: bold;">Tahun : </span><input type="number" style="padding: 3px 5px;width: 75px;" class="tahunefektif" name="tahun_efektif" value="2019" onchange="$('#key').val($(this).val()); goSubmit('set_tahun_efektif')">
+                    </li>
+                                        <!-- Call Search -->
+                                        <!-- Tasks -->
+                                        <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons" style="font-size: 24px">flag</i>
+                            <span class="label-count" id="task_count">394</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">TASKS</li>
+                            <li class="body">
+                                <ul class="menu" id="task_data">
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4942">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Ketidaksiapan fire fighting system sesuai NFPA</b><br/><i>ok</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Kamis, 29 Agu 2019  07:11:18                                                    <i class="material-icons">account_circle</i> Abdul Wahid (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4927">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Terjadinya Pelanggaran Terhadap Regulasi Pemerintah yang Berhubungan Dengan Pengelolaan Limbah</b><br/><i>Mohon tindak lanjut bantuan terkait dengan perizinan lingkungan Terhadap Regulasi Pemerintah yang Berhubungan Dengan Pengelolaan Limbah</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  02:46:24                                                    <i class="material-icons">account_circle</i> Rusendra Panji Pk (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4926">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Terjadinya Gangguan Pada Sistem Eksitasi</b><br/><i>Mohon tindak lanjut terkait seringnya Terjadinya Gangguan Pada Sistem Eksitasi</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  02:44:27                                                    <i class="material-icons">account_circle</i> Rusendra Panji Pk (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4925">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Ketidaksiapan fire fighting system sesuai NFPA</b><br/><i>Mohon tindak lanjut untuk Ketidaksiapan fire fighting system sesuai NFPA</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  02:40:20                                                    <i class="material-icons">account_circle</i> Rusendra Panji Pk (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4923">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Terjadinya Gangguan Pada Control System Pada Turbin</b><br/><i>Selamat siang. 
+Mohon ditindaklanjuti sebagai profil resiko bangka</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  12:59:56                                                    <i class="material-icons">account_circle</i> Kunto Gunawan (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4922">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Terjadinya Gangguan Pada Control System Boiler</b><br/><i>Selamat siang. 
+Mohon ditindaklanjuti sebagai profil resiko bangka</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  12:59:11                                                    <i class="material-icons">account_circle</i> Kunto Gunawan (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4921">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Terjadinya Gangguan Pada Control System Boiler</b><br/><i>Selamat siang. 
+Mohon ditindaklanjuti sebagai profil resiko bangka</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  12:58:29                                                    <i class="material-icons">account_circle</i> Kunto Gunawan (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4920">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Terjadinya Gangguan Pada Control System Boiler</b><br/><i>Selamat siang. 
+Mohon ditindaklanjuti sebagai profil resiko bangka</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  12:58:05                                                    <i class="material-icons">account_circle</i> Kunto Gunawan (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4919">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Sering terjadi tumpahan batu bara pada conveyor</b><br/><i>Selamat siang. 
+Mohon ditindaklanjuti sebagai profil resiko bangka</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  12:57:43                                                    <i class="material-icons">account_circle</i> Kunto Gunawan (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/task/4918">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">flag</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <p class="info"><b>Penurunan vacum kondensor</b><br/><i>Selamat siang. 
+Mohon ditindaklanjuti sebagai profil resiko bangka</i></p>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Rabu, 28 Agu 2019  12:56:46                                                    <i class="material-icons">account_circle</i> Kunto Gunawan (Risk Owner)                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/risk_task">View All Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+                            <i class="material-icons"  style="font-size: 24px">help</i>
+                        </a>
+                        <ul class="dropdown-menu" style="min-width: 150px !important;">
+                            <li class="header">HELP</li>
+                            <li class="body">
+                                <a target="_blank" href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/wf">
+                                    <div class="menu-info">
+                                        <i class="material-icons">show_chart</i>
+                                        WORK FLOW
+                                    </div>
+                                </a>
+                                <a target="_blank" href="http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home/ug">
+                                    <div class="menu-info">
+                                        <i class="material-icons">book</i>
+                                        USER GUIDE
+                                    </div>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+      <form method="post" enctype="multipart/form-data" id="main_form" class="form-horizontal">
+        <input type="hidden" name="act" id="act" />
+        <input type="hidden" name="go" id="go" />
+        <input type="hidden" name="key" id="key" />
+                <div class="container-fluid">
+                    <!-- Basic Table -->
+              
+                            
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/chart/core.js"></script>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/chart/charts.js"></script>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/chart/animated.js"></script>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/html2canvas.js"></script>
+  <div class="col-sm-4 no-padding no-margin" id="kajian1" style="min-height: 300px; margin-top: 0px !important">
+    
+  </div>
+  <script type="text/javascript">
+    $(function(){
+      req(1, 3);
+    })
+  </script>
+  <div class="col-sm-4 no-padding no-margin" id="kajian2" style="min-height: 300px; margin-top: 0px !important">
+    
+  </div>
+  <script type="text/javascript">
+    $(function(){
+      req(2, 4);
+    })
+  </script>
+  <div class="col-sm-4 no-padding no-margin" id="kajian3" style="min-height: 300px; margin-top: 0px !important">
+    
+  </div>
+  <script type="text/javascript">
+    $(function(){
+      req(3, 5);
+    })
+  </script>
+<div style="clear: both;"></div>
+<div class="row clearfix">
+  <div class="col-sm-12" id="taksonomibar">
+    <div style="min-height: 200px; background-color: #ffffff26; vertical-align: middle;text-align: center; padding-top: 80px">
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $.ajax({
+      type:"post",
+      url:"http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home",
+      data:{act:'get_taksonomi'},
+      success:function(ret){
+        $('#taksonomibar').html(ret);
+      }
+    });
+  })
+</script>
+
+ <div class="modal fade" id="maturylevel" tabindex="-1" role="dialog">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"><center>MATURITY LEVEL</center></h2>
+            </div>
+            <div class="modal-body" style="color:#333">
+            <table class="table table-bordered" id="export" width="100%">
+              <thead>
+              <tr>
+                <td style="border: none;">
+                  <table style="width:auto;margin-top:10px">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 5px;width:50px;background-color:#2196f3;border:0px solid black;"></td>
+                        <td style="padding: 5px;font-size: 12px">&nbsp;Target</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px;width:50px;background-color:#f9973a;border:0px solid black;"></td>
+                        <td style="padding: 5px;font-size: 12px">&nbsp;Realisasi</td>
+                      </tr>
+                          </tbody>
+                  </table>
+                </td>
+                <td colspan="7" style="border: none;">
+                <div style="    margin-left: -50px; margin-right: -30px;">
+                <div id="chartdiv"></div>
+              </div>
+                </td>
+              </tr>
+                <tr>
+                  <th style="text-align:center;background-color:#034485;color:#eee;font-size: 16px;">TAHUN</th>
+                                    <th style="text-align:center;background-color:#034485;color:#eee;font-size: 16px;"  width="122px">2013</th>
+                                    <th style="text-align:center;background-color:#034485;color:#eee;font-size: 16px;"  width="122px">2014</th>
+                                    <th style="text-align:center;background-color:#034485;color:#eee;font-size: 16px;"  width="122px">2015</th>
+                                    <th style="text-align:center;background-color:#034485;color:#eee;font-size: 16px;"  width="122px">2016</th>
+                                    <th style="text-align:center;background-color:#034485;color:#eee;font-size: 16px;"  width="122px">2017</th>
+                                    <th style="text-align:center;background-color:#034485;color:#eee;font-size: 16px;"  width="122px">2018</th>
+                                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-size: 16px;">Target</td>
+                                    <td style="text-align: center;font-size: 16px;">2</td>
+                                    <td style="text-align: center;font-size: 16px;">2.5</td>
+                                    <td style="text-align: center;font-size: 16px;">2.75</td>
+                                    <td style="text-align: center;font-size: 16px;">2.5</td>
+                                    <td style="text-align: center;font-size: 16px;">2.85</td>
+                                    <td style="text-align: center;font-size: 16px;">3</td>
+                                  </tr>
+                <tr>
+                  <td style="font-size: 16px;">Realisasi</td>
+                                    <td style="text-align: center;font-size: 16px;">1.56</td>
+                                    <td style="text-align: center;font-size: 16px;">2.54</td>
+                                    <td style="text-align: center;font-size: 16px;">2.83</td>
+                                    <td style="text-align: center;font-size: 16px;">2.64</td>
+                                    <td style="text-align: center;font-size: 16px;">2.92</td>
+                                    <td style="text-align: center;font-size: 16px;"></td>
+                                  </tr>
+                <tr>
+                  <td style="font-size: 16px;">Maturity Level ERM</td>
+                                    <td style="background: #f14236; color: white;text-align: center;font-size: 16px;">78%</td>
+                                    <td style="background: #58b051; color: white;text-align: center;font-size: 16px;">101.6%</td>
+                                    <td style="background: #127dd0; color: white;text-align: center;font-size: 16px;">102.91%</td>
+                                    <td style="background: #127dd0; color: white;text-align: center;font-size: 16px;">105.6%</td>
+                                    <td style="background: #58b051; color: white;text-align: center;font-size: 16px;">102.46%</td>
+                                    <td></td>
+                                  </tr>
+              </tbody>
+            </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="modal fade" id="arsip" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"><center>ANNUAL REPORT</center></h2>
+            </div>
+            <div class="modal-body" id="elarsip">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+.dark-tooltip + .tooltip > .tooltip-inner {
+    background-color: #000c !important; 
+    border: 1px solid #000c;
+}#chartdiv1,#chartdiv2,#chartdiv3,#charttrend1,#charttrend2,#charttrend3 ,#charttrenddetail1,#charttrenddetail2,#charttrenddetail3 {
+  width: 100%;
+  height: 200px;
+}
+</style>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/chart/amcharts.js"></script>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/chart/pie.js"></script>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/chart/serial.js"></script>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/chart/export.min.js"></script>
+<link rel="stylesheet" href="http://localhost/ketonggo_project/pjbs_erm2019/assets/css/export.css" type="text/css" media="all" />
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/chart/light.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
+function req(id_class, id_kajian_risiko){
+    $.ajax({
+      type:"post",
+      url:"http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home",
+      beforeSend:function(){
+        $('#kajian'+id_class).append(''
+          +' <div style="position:absolute; min-height: 300px; width:100%; top:0px; left:0px; background-color: #ffffff70; vertical-align: middle;text-align: center; padding-top: 150px">'
+          +'<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>'
+          +'</div>');
+      },
+      data:{
+        act:'get_kajian_risiko', 
+        id_kajian_risiko:id_kajian_risiko, 
+        id_class:id_class, 
+        tahun:$(".tahunefektif").val(),
+        top:$("#top"+id_class).val(),
+        id_scorecard:$("#id_scorecard"+id_class).val()
+      },
+      success:function(ret){
+        $('#kajian'+id_class).html(ret);
+      }
+    });
+}
+
+function reset_kesimpulan(id_class, id_kajian_risiko){
+  $.ajax({
+    type:"post",
+    url:"http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home",
+    data:{
+      act:'reset_kesimpulan', 
+      id_kajian_risiko:id_kajian_risiko, 
+      id_class:id_class, 
+      tahun:$(".tahunefektif").val(),
+      top:$("#top"+id_class).val(),
+      id_scorecard:$("#id_scorecard"+id_class).val()
+    },
+    success:function(ret){
+      reqtb(id_class, id_kajian_risiko);
+      // $("#kesimpulan"+id_class).modal('toggle');
+    }
+  });
+}
+function save_kesimpulan(id_class, id_kajian_risiko){
+  $.ajax({
+    type:"post",
+    url:"http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home",
+    data:{
+      act:'save_kesimpulan', 
+      id_kajian_risiko:id_kajian_risiko, 
+      id_class:id_class, 
+      tahun:$(".tahunefektif").val(),
+      keterangan:$("#kesimpulan"+id_class+" #keterangan").val(),
+      status:$("#kesimpulan"+id_class+" #status").val(),
+      top:$("#top"+id_class).val(),
+      id_scorecard:$("#id_scorecard"+id_class).val()
+    },
+    success:function(ret){
+      reqtb(id_class, id_kajian_risiko);
+      $("#kesimpulan"+id_class).modal('toggle');
+    }
+  });
+}
+function reqtb(id_class, id_kajian_risiko){
+  $.ajax({
+    type:"post",
+    url:"http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home",
+    data:{
+      act:'get_table', 
+      id_kajian_risiko:id_kajian_risiko, 
+      id_class:id_class, 
+      tahun:$(".tahunefektif").val(),
+      top:$("#top"+id_class).val(),
+      id_scorecard:$("#id_scorecard"+id_class).val()
+    },
+    success:function(ret){
+      $('#datarisiko'+id_kajian_risiko).html(ret);
+    }
+  });
+}
+
+function maturylevel(){
+
+  $('#maturylevel').modal('show');
+}
+
+function arsip(){
+
+  $.ajax({
+    type:"post",
+    url:"http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/home",
+    data:{
+      act:'get_arsip'
+    },
+    success:function(ret){
+      $('#elarsip').html(ret);
+    }
+  });
+
+  $('#arsip').modal('show');
+}
+
+var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "serial",
+  "addClassNames": true,
+  "theme": "light",
+  "autoMargins": false,
+  "marginLeft": 30,
+  "marginRight": 8,
+  "marginTop": 10,
+  "marginBottom": 26,
+    "depth3D": 10,
+  "angle": 50,
+ /* "balloon": {
+    "adjustBorderColor": false,
+    "horizontalPadding": 10,
+    "verticalPadding": 8,
+    "color": "#ffffff"
+  },*/
+
+  "dataProvider": [{"tahun":"2013","target":"2","realisasi":"1.56"},{"tahun":"2014","target":"2.5","realisasi":"2.54"},{"tahun":"2015","target":"2.75","realisasi":"2.83"},{"tahun":"2016","target":"2.5","realisasi":"2.64"},{"tahun":"2017","target":"2.85","realisasi":"2.92"},{"tahun":"2018","target":"3"}],
+  "valueAxes": [ {
+    "axisAlpha": 0,
+    "position": "left",
+  } ],
+  "startDuration": 1,
+  "graphs": [ {
+    "fontFamily":"'Lato', Arial, Tahoma, sans-serif",
+    "alphaField": "alpha",
+    "fillColors":['#1174c3','#2196f3'],
+    "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
+    "fillAlphas": 1,
+        "lineAlpha": 0.1,
+    "type": "column",
+    "title": "Target",
+    "valueField": "target",
+    "dashLengthField": "dashLengthColumn"
+  }, {
+    "fontFamily":"'Lato', Arial, Tahoma, sans-serif",
+    "alphaField": "alpha",
+    "fillColors":['#d06e12','#f9973a'],
+    "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
+    "fillAlphas": 1,
+        "lineAlpha": 0.1,
+    "type": "column",
+    "title": "Realisasi",
+    "valueField": "realisasi",
+    "dashLengthField": "dashLengthColumn"
+  } ],
+  "categoryField": "tahun",
+  "fontFamily":"'Lato', Arial, Tahoma, sans-serif",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "axisAlpha": 0,
+    "tickLength": 0,
+     "gridThickness": 0
+  },
+  "export": {
+    "enabled": false
+  }
+} );
+
+</script>
+<style type="text/css">
+#chartdiv {
+  width: 100%;
+  height: 300px;
+  margin-bottom: -20px;
+}                       
+  .info-jumlah{    background: #f9f9f9;
+    color: #aaa;
+    border-top: 1px solid #e9e9e9;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+  }
+  .info-jumlah-active{    background: #2296f3;
+    color: #fff;
+    border-top: 1px solid #2496f3;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+  }
+
+  #chartdiv .amcharts-category-axis{
+    display: none;
+  }
+  .panah{
+    background-image: -webkit-gradient(linear, 0% 50%, 100% 100%, from(#ffffff), to(#e6e6e6)) !important;
+    font-size: 100px;
+ /*   margin-left: -50px;
+    margin-top: 320px;*/
+    position: absolute;
+    z-index: 10;
+    text-shadow: 0px 5px 5px rgba(0,0,0,.2);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .panah1{
+    -webkit-animation: myrighta 4s;  /* Safari 4.0 - 8.0 */
+    animation: myrighta 4s;
+    top: 150px;
+    right: 62%;
+  }
+  .panah2{
+    -webkit-animation: myrightb 4s;  /* Safari 4.0 - 8.0 */
+    animation: myrightb 4s;
+    top: 150px;
+    right: 300px;
+    right: 28.7%;
+  }
+@media (max-width: 991px) {
+    .panah{
+      display: none;
+    }
+}
+
+
+@-webkit-keyframes myrighta {
+    0% {opacity:0;
+      right: 67%;}
+    75% {opacity:0;
+      right: 67%;}
+    85% {right: 62%;opacity:1;}
+}
+
+@keyframes myrighta {
+    0% {opacity:0;
+      right: 67%;}
+    75% {opacity:0;
+      right: 67%;}
+    85% {right: 62%;opacity:1;}
+}
+@-webkit-keyframes myrightb {
+    0% {right: 33.7%;opacity:0;}
+    90% {right: 33.7%;opacity:0;}
+    100% {right:28.7%;opacity:1;}
+}
+
+@keyframes myrightb {
+    0% {right: 33.7%;opacity:0;}
+    90% {right: 33.7%;opacity:0;}
+    100% {right:28.7%;opacity:1;}
+}
+</style>              <div style="clear: both;"></div>
+        </div>
+
+        </form>
+    </section>
+
+
+    <!-- Select Plugin Js -->
+    <!--<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/bootstrap-select/js/bootstrap-select.js"></script>-->
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/node-waves/waves.js"></script>
+
+
+    <!-- Autosize Plugin Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/autosize/autosize.js"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/jquery-countto/jquery.countTo.js"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+    <!-- Custom Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/js/admin.js"></script>
+
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/js/pages/forms/basic-form-elements.js"></script>
+    <!-- Demo Js -->
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/js/demo.js"></script>
+    <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/custom.js"></script>
+   <script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/select2/select2.full.min.js"></script><script>$(function() {
+        $(".select2, select.form-control").select2({
+            placeholder: '-pilih-',
+            allowClear: true   // Shows an X to allow the user to clear the value.
+        });
+        });</script>
+    <link rel="stylesheet" href="http://localhost/ketonggo_project/pjbs_erm2019/assets/css/select2-materialize.css" />
+    <link rel="stylesheet" href="http://localhost/ketonggo_project/pjbs_erm2019/assets/css/materialize.css" />
+    <link rel="stylesheet" href="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/upload/css/jquery.fileupload.css" /><script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/upload/js/vendor/jquery.ui.widget.js"></script><script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/upload/js/jquery.iframe-transport.js"></script><script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/upload/js/jquery.fileupload.js"></script>
+<script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/js/datepicker/js/moment.min.js"></script><script src="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script><script>$(function(){
+
+			$(".datetimepicker").bootstrapMaterialDatePicker({
+		        format: "DD-MM-YYYY HH:mm:ss",
+		        clearButton: true,
+		        weekStart: 1
+		    });
+		    $(".datepicker").bootstrapMaterialDatePicker({
+		        format: "DD-MM-YYYY",
+		        clearButton: true,
+		        weekStart: 1,
+		        time: false
+		    });
+		    $(".datepickerstart").bootstrapMaterialDatePicker({
+		        format: "DD-MM-YYYY",
+		        clearButton: true,
+		        weekStart: 1,
+		        time: false,
+		        minDate : new Date()
+		    });
+
+	        $(".timepicker").bootstrapMaterialDatePicker({
+		        format: "HH:mm",
+		        clearButton: true,
+		        date: false
+		    });
+
+		});</script><link href="http://localhost/ketonggo_project/pjbs_erm2019/assets/template/backend/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+
+    function goToggle(){
+      $.ajax({
+        url:"http://localhost/ketonggo_project/pjbs_erm2019/panelbackend/ajax/set_toggle",
+        data:{collapse:($("body").hasClass("full")?1:0)}
+      });
+    }
+    </script>
+</body>
+
+</html>
+<style type="text/css">
+.tunjuk {font-size: 14px !important;
+    margin-top:10px !important;
+    color: #dd425f !important;
+    position: relative;
+    -webkit-animation: mytunjuk 0.5s;
+    animation: mytunjuk 0.5s;
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mytunjuk {
+    0% {margin-left:5px; color: #ffcb52 !important;}
+    100% {margin-left:0px; color: #dd425f !important;}
+}
+
+@keyframes mytunjuk {
+    0% {margin-left:5px; color: #ffcb52 !important;}
+    100% {margin-left:0px; color: #dd425f !important;}
+}
+</style>

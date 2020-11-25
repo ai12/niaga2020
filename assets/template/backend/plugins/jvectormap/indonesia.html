@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>JQVMap - Indonesia Map</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link href="jquery-jvectormap-2.0.3.css" media="screen" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="jquery-jvectormap-2.0.3.min.js"></script>
+    <script type="text/javascript" src="map.indonesia.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="vmap" style="width: 900px; height: 400px;"></div>
+    <div id="log"></div>
+ 
+<script>
+$( document ).on( "mousemove", function( event ) {
+  $( "#log" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+});
+</script>
+  </body>
+    <script>
+
+  var plants = [
+      {latLng: [75, -160], name: 'Asahan', jenis:'plta_a_50'},
+      {latLng: [65, -145], name: 'Duri', jenis:'pltg_b_50'},
+      {latLng: [53, -133], name: 'Banjarsari', jenis:'pltu_a_50'},
+      {latLng: [35, -100], name: 'Bangka', jenis:'pltu_b_50'},
+      {latLng: [28, -78], name: 'Belitung', jenis:'pltu_b_50'},
+      {latLng: [45, -65], name: 'Ketapang', jenis:'pltu_b_50'},
+      {latLng: [-23, -45], name: 'Brantas', jenis:'plta_b_50'},
+      {latLng: [18, 8 ], name: 'Suppa', jenis:'pltd_b_50'},
+      {latLng: [13, 27 ], name: 'Kendari', jenis:'pltu_b_50'},
+      {latLng: [-27, 12 ], name: 'Ropa', jenis:'pltu_b_50'},
+      {latLng: [-39, 39 ], name: 'Bolok', jenis:'pltu_b_50'},
+      {latLng: [55, 39 ], name: 'Amurang', jenis:'pltu_b_50'},
+      {latLng: [63, 69 ], name: 'Tidore', jenis:'pltu_b_50'},
+    ];
+
+  jQuery(document).ready(function () {
+   $('#vmap').vectorMap({
+    map: 'indonesia_id',
+    normalizeFunction: 'polynomial',
+    hoverOpacity: 1,
+    hoverColor: false,
+    scaleColors: ['#C8EEFF', '#0071A4'],
+    backgroundColor: 'rgb(165, 191, 221)',
+    color: '#333',
+   /* markerStyle: {
+      initial: {
+        fill: '#F8E23B',
+        stroke: '#383f47'
+      }
+    },*/
+    onMarkerClick:function(e, code){
+      alert(code);
+    },
+    labels: {
+        markers: {
+          render: function(index){
+            return plants[index].name;
+          },
+          offsets: function(index){
+            var offset = plants[index]['offsets'] || [5, -2];
+
+            return [offset[0] - 7, offset[1] + 3];
+          }
+        }
+    },
+    markers: plants,
+    series: {
+      markers: [{
+        attribute: 'image',
+        scale: {
+          'pltu_b_50': '/lainlain/jquery-jvectormap-2.0.3/img/pltu_b_50.png',
+          'pltu_a_50': '/lainlain/jquery-jvectormap-2.0.3/img/pltu_a_50.png',
+          'plta_b_50': '/lainlain/jquery-jvectormap-2.0.3/img/plta_b_50.png',
+          'plta_a_50': '/lainlain/jquery-jvectormap-2.0.3/img/plta_a_50.png',
+          'pltg_b_50': '/lainlain/jquery-jvectormap-2.0.3/img/pltg_b_50.png',
+          'pltg_a_50': '/lainlain/jquery-jvectormap-2.0.3/img/pltg_a_50.png',
+          'pltd_b_50': '/lainlain/jquery-jvectormap-2.0.3/img/pltd_b_50.png',
+          'pltd_a_50': '/lainlain/jquery-jvectormap-2.0.3/img/pltd_a_50.png',
+        },
+        values: plants.reduce(function(p, c, i){ p[i] = c.jenis; return p }, {}),
+        legend: {
+          horizontal: true,
+          title: 'Keterangan',
+          labelRender: function(v){
+            return {
+              pltu_b_50: 'PLTU < 50 MW',
+              pltu_a_50: 'PLTU > 50 MW',
+              plta_b_50: 'PLTA < 50 MW',
+              plta_a_50: 'PLTA > 50 MW',
+              pltg_b_50: 'PLTG < 50 MW',
+              pltg_a_50: 'PLTG > 50 MW',
+              pltd_b_50: 'PLTD < 50 MW',
+              pltd_a_50: 'PLTD > 50 MW',
+            }[v];
+          }
+        }
+      }]
+    }
+  });
+});
+    </script>
+</html>
+
+<style type="text/css">
+  .jvectormap-legend-inner {
+  margin-bottom: 3px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend-tick {
+  width: auto;
+  margin-right: 10px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend-tick-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 13px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend-tick-sample {
+  width: 32px;
+  height: 23px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.jvectormap-legend {
+    color: black;
+    border-radius: 3px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend .jvectormap-legend-tick {
+    float: none;
+}
+.jvectormap-legend-cnt-h {
+    bottom: 0;
+    left: 0;
+}
+.jvectormap-legend {
+    background: none;
+    border-radius: 3px;
+}
+.jvectormap-legend-cnt-h .jvectormap-legend {
+    float: left;
+    margin: 0 10px 0px 0;
+    padding: 3px 3px 1px 3px;
+}
+</style>
